@@ -1,11 +1,12 @@
 ﻿using Fizzbuzz_Core_Design_Pattern.Fizzbuzz.Enums;
 using Fizzbuzz_Core_Design_Pattern.Fizzbuzz.Reactions.Determine;
+using Fizzbuzz_Core_Design_Pattern.Printer.Reactions;
 
 namespace Fizzbuzz_Core_Design_Pattern.Fizzbuzz;
 
 public class FizzbuzzGame
 {
-    private FizzbuzzContext _context;
+    private FizzbuzzContext? _context;
     private FizzbuzzDetermineType _determineType;
     private int _n;
 
@@ -27,8 +28,9 @@ public class FizzbuzzGame
         _n = From;
         while (_n < To)
         {
-            _context.RequestDetermineNumber(this, new FizzbuzzDetermineNumberRequest(_n));
-            Console.WriteLine(_n + ": " + _determineType);
+            _context?.RequestDetermineNumber(this, new FizzbuzzDetermineNumberRequest(_n));
+            _context?.PrinterContext?.RequestPrinterWrite(this,
+                new PrinterWriteRequest($"{_n}:{_determineType}"));
             ProgressN();
         }
     }

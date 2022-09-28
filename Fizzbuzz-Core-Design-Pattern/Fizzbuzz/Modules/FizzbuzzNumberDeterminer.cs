@@ -23,9 +23,9 @@ public class FizzbuzzNumberDeterminer
     {
         var determineType = FizzbuzzDetermineType.Number;
 
-        if (n % _context.Game.FizzNumber == 0)
+        if (n % _context.Game?.FizzNumber == 0)
             determineType = FizzbuzzDetermineType.Fizz;
-        if (n % _context.Game.BuzzNumber == 0)
+        if (n % _context.Game?.BuzzNumber == 0)
             determineType = determineType == FizzbuzzDetermineType.Fizz
                 ? FizzbuzzDetermineType.Fizzbuzz
                 : FizzbuzzDetermineType.Buzz;
