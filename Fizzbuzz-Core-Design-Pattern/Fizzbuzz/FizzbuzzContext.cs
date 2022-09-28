@@ -1,5 +1,6 @@
 ﻿using Fizzbuzz_Core_Design_Pattern.Fizzbuzz.Modules;
 using Fizzbuzz_Core_Design_Pattern.Fizzbuzz.Reactions.Determine;
+using Fizzbuzz_Core_Design_Pattern.Printer;
 
 namespace Fizzbuzz_Core_Design_Pattern.Fizzbuzz;
 
@@ -13,6 +14,10 @@ public class FizzbuzzContext
     public FizzbuzzNumberDeterminer Determiner { get; }
     public FizzbuzzGame? Game { get; internal set; }
 
+    private Printer.Printer? PrinterObj { get; set; }
+    
+    public PrinterContext? PrinterContext { get; set; }
+
     public event EventHandler<FizzbuzzDetermineNumberRequest>? DetermineNumberRequestHandlers;
     public event EventHandler<FizzbuzzNumberDeterminedEvent>? NumberDeterminedEventHandlers;
 
@@ -24,5 +29,12 @@ public class FizzbuzzContext
     public void FireNumberDeterminedEvent(object? sender, FizzbuzzNumberDeterminedEvent ev)
     {
         NumberDeterminedEventHandlers?.Invoke(sender, ev);
+    }
+
+    public void SetupPrinter(TextWriter writer)
+    {
+        PrinterObj = new Printer.Printer(writer);
+        PrinterContext = new PrinterContext();
+        PrinterObj.AttachPrinterToContext(PrinterContext);
     }
 }
