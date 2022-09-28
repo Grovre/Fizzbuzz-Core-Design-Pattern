@@ -13,8 +13,8 @@ public class FizzbuzzContext
     public FizzbuzzNumberDeterminer Determiner { get; }
     public FizzbuzzGame? Game { get; internal set; }
 
-    public event EventHandler<FizzbuzzDetermineNumberRequest> DetermineNumberRequestHandlers;
-    public event EventHandler<FizzbuzzNumberDeterminedEvent> NumberDeterminedEventHandlers;
+    public event EventHandler<FizzbuzzDetermineNumberRequest>? DetermineNumberRequestHandlers;
+    public event EventHandler<FizzbuzzNumberDeterminedEvent>? NumberDeterminedEventHandlers;
 
     public void RequestDetermineNumber(object? sender, FizzbuzzDetermineNumberRequest rq)
     {

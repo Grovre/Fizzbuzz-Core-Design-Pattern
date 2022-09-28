@@ -38,7 +38,7 @@ public class FizzbuzzGame
         _n++;
     }
 
-    public void AssignGameToContext(FizzbuzzContext context)
+    public void AttachGameToContext(FizzbuzzContext context)
     {
         if (context.Game != null) throw new Exception("Context already has a game");
         _context = context;
