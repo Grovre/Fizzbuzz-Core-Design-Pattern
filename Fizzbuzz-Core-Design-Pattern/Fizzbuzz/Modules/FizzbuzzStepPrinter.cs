@@ -1,6 +1,6 @@
 ﻿namespace Fizzbuzz_Core_Design_Pattern.Fizzbuzz.Modules;
 
-public class FizzbuzzPrinter
+public class FizzbuzzStepPrinter
 {
     
 }
