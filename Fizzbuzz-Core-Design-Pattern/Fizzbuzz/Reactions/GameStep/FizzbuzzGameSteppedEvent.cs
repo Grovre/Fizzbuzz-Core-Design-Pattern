@@ -2,5 +2,12 @@
 
 public class FizzbuzzGameSteppedEvent
 {
-    
+    public readonly int CurrentStepNumber;
+    public readonly FizzbuzzGame GameStepped;
+
+    public FizzbuzzGameSteppedEvent(int currentStepNumber, FizzbuzzGame gameStepped)
+    {
+        CurrentStepNumber = currentStepNumber;
+        GameStepped = gameStepped;
+    }
 }

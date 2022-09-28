@@ -2,5 +2,10 @@
 
 public class FizzbuzzGameStepRequest
 {
-    
+    public readonly FizzbuzzGame GameToStep;
+
+    public FizzbuzzGameStepRequest(FizzbuzzGame gameToStep)
+    {
+        GameToStep = gameToStep;
+    }
 }

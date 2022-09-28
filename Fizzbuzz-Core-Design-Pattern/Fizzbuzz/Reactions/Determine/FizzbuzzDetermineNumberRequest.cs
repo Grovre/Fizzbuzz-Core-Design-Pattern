@@ -2,5 +2,10 @@
 
 public class FizzbuzzDetermineNumberRequest
 {
-    
+    public readonly int N;
+
+    public FizzbuzzDetermineNumberRequest(int n)
+    {
+        N = n;
+    }
 }
